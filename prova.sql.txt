@@ -1,0 +1,258 @@
+CREATE DATABASE Escola;
+USE Escola;
+
+CREATE TABLE Aluno (
+    ID_Aluno INT PRIMARY KEY,
+    Nome VARCHAR(100),
+    Rua VARCHAR(100),
+    Numero INT,
+    Bairro VARCHAR(50),
+    Cidade VARCHAR(50),
+    Estado VARCHAR(50),
+    Data_Nascimento DATE,
+    Email VARCHAR(100),
+    Idade INT
+);
+
+CREATE TABLE Telefones_Aluno (
+    ID_Aluno INT,
+    Telefone VARCHAR(15),
+    FOREIGN KEY (ID_Aluno) REFERENCES Aluno(ID_Aluno)
+);
+
+CREATE TABLE Professor (
+    ID_Professor INT PRIMARY KEY,
+    Nome VARCHAR(100),
+    Rua VARCHAR(100),
+    Numero INT,
+    Bairro VARCHAR(50),
+    Cidade VARCHAR(50),
+    Estado VARCHAR(50),
+    Data_Nascimento DATE,
+    Email VARCHAR(100),
+    Especialidade VARCHAR(100),
+    Idade INT
+);
+
+CREATE TABLE Telefones_Professor (
+    ID_Professor INT,
+    Telefone VARCHAR(15),
+    FOREIGN KEY (ID_Professor) REFERENCES Professor(ID_Professor)
+);
+
+CREATE TABLE Disciplina (
+    ID_Disciplina INT PRIMARY KEY,
+    Nome VARCHAR(100),
+    Carga_Horaria INT
+);
+
+CREATE TABLE Turma (
+    ID_Turma INT PRIMARY KEY,
+    Ano INT,
+    Semestre INT,
+    Horario VARCHAR(50),
+    ID_Professor INT,
+    ID_Disciplina INT,
+    FOREIGN KEY (ID_Professor) REFERENCES Professor(ID_Professor),
+    FOREIGN KEY (ID_Disciplina) REFERENCES Disciplina(ID_Disciplina)
+);
+
+CREATE TABLE Aluno_Turma (
+    ID_Aluno INT,
+    ID_Turma INT,
+    PRIMARY KEY (ID_Aluno, ID_Turma),
+    FOREIGN KEY (ID_Aluno) REFERENCES Aluno(ID_Aluno),
+    FOREIGN KEY (ID_Turma) REFERENCES Turma(ID_Turma)
+);
+
+CREATE TABLE Avaliacao (
+    ID_Avaliacao INT PRIMARY KEY,
+    Nota FLOAT,
+    Data_Avaliacao DATE,
+    ID_Aluno INT,
+    ID_Turma INT,
+    FOREIGN KEY (ID_Aluno) REFERENCES Aluno(ID_Aluno),
+    FOREIGN KEY (ID_Turma) REFERENCES Turma(ID_Turma)
+);
+
+INSERT INTO Aluno (ID_Aluno, Nome, Rua, Numero, Bairro, Cidade, Estado, Data_Nascimento, Email, Idade) VALUES
+(1,'João Silva', 'Rua das Flores', 123, 'Centro', 'São Paulo', 'SP',  '1990-05-10', 'joao@gmail.com',22),
+(2,'Maria Santos', 'Avenida Principal', 456, 'Jardim', 'Rio de Janeiro', 'RJ','1993-05-10' ,'maria@hotmail.com',22),
+(3, 'Pedro Oliveira', 'Rua dos Coqueiros', 789, 'Praia', 'Florianópolis', 'SC', '1995-08-15', 'pedro@example.com', 29),
+(4, 'Ana Silva', 'Rua das Palmeiras', 102, 'Centro', 'Salvador', 'BA', '1993-03-25', 'ana@example.com', 31),
+(5, 'Lucas Fernandes', 'Avenida das Flores', 567, 'Jardins', 'Brasília', 'DF', '1992-11-12', 'lucas@example.com', 32),
+(6, 'Juliana Costa', 'Rua da Esperança', 321, 'Vila Nova', 'Recife', 'PE', '1994-07-18', 'juliana@example.com', 30),
+(7, 'Felipe Santos', 'Rua dos Girassóis', 888, 'Campestre', 'Porto Alegre', 'RS', '1991-09-30', 'felipe@example.com', 33),
+(8, 'Aline Lima', 'Avenida das Acácias', 444, 'Floresta', 'Manaus', 'AM', '1996-02-08', 'aline@example.com', 28),
+(9, 'Rafaela Oliveira', 'Rua dos Pinheiros', 555, 'Jardim', 'Campinas', 'SP', '1993-12-20', 'rafaela@example.com', 31),
+(10, 'Gabriel Pereira', 'Rua das Oliveiras', 777, 'Centro', 'Goiânia', 'GO', '1990-06-05', 'gabriel@example.com', 32),
+(11, 'Mariana Costa', 'Avenida dos Lírios', 333, 'Alameda', 'Fortaleza', 'CE', '1992-04-17', 'mariana@example.com', 30),
+(12, 'Thiago Souza', 'Rua das Amendoeiras', 222, 'Praia', 'Natal', 'RN', '1995-11-28', 'thiago@example.com', 27),
+(13, 'Carla Santos', 'Rua das Violetas', 696, 'Bela Vista', 'São Luís', 'MA', '1994-08-10', 'carla@example.com', 29),
+(14, 'Daniel Almeida', 'Avenida das Margaridas', 111, 'Centro', 'Belém', 'PA', '1991-10-15', 'daniel@example.com', 32),
+(15, 'Isabela Ferreira', 'Rua dos Ipês', 999, 'Jardim', 'Cuiabá', 'MT', '1990-03-20', 'isabela@example.com', 34),
+(16, 'Diego Rocha', 'Avenida das Orquídeas', 777, 'Alameda', 'João Pessoa', 'PB', '1993-07-08', 'diego@example.com', 31),
+(17, 'Camila Oliveira', 'Rua dos Lírios', 444, 'Vila Nova', 'Curitiba', 'PR', '1996-01-25', 'camila@example.com', 28),
+(18, 'Luciana Silva', 'Rua das Tulipas', 555, 'Centro', 'Teresina', 'PI', '1992-05-30', 'luciana@example.com', 29),
+(19, 'Anderson Santos', 'Avenida dos Cravos', 888, 'Bela Vista', 'Florianópolis', 'SC', '1990-09-12', 'anderson@example.com', 31),
+(20, 'Fernanda Costa', 'Rua das Rosas', 222, 'Praia', 'São Luís', 'MA', '1995-04-18', 'fernanda@example.com', 27);
+
+INSERT INTO Professor (ID_Professor, Nome, Rua, Numero, Bairro, Cidade, Estado, Data_Nascimento, Email, Especialidade, Idade)
+VALUES
+(3, 'Ana Paula Oliveira', 'Rua das Flores', 456, 'Centro', 'São Paulo', 'SP', '1980-07-15', 'ana_paula@example.com', 'Biologia', 42),
+(4, 'Rodrigo Santos', 'Avenida Principal', 789, 'Jardim', 'Rio de Janeiro', 'RJ', '1975-11-20', 'rodrigo@example.com', 'Física', 47),
+(5, 'Carolina Souza', 'Rua das Palmeiras', 102, 'Centro', 'Salvador', 'BA', '1978-04-25', 'carolina@example.com', 'Química', 44),
+(6, 'Ricardo Fernandes', 'Avenida dos Girassóis', 321, 'Bela Vista', 'Brasília', 'DF', '1982-09-18', 'ricardo@example.com', 'Geografia', 40),
+(7, 'Fernanda Lima', 'Rua dos Coqueiros', 555, 'Jardins', 'Recife', 'PE', '1976-03-12', 'fernanda@example.com', 'Literatura', 46),
+(8, 'Gustavo Oliveira', 'Avenida das Acácias', 888, 'Floresta', 'Manaus', 'AM', '1985-11-08', 'gustavo@example.com', 'Matemática', 37),
+(9, 'Mariana Costa', 'Rua das Amendoeiras', 444, 'Praia', 'Campinas', 'SP', '1979-06-20', 'mariana_c@example.com', 'História', 43),
+(10, 'Roberto Pereira', 'Avenida das Violetas', 777, 'Alameda', 'Goiânia', 'GO', '1988-12-05', 'roberto@example.com', 'Artes', 34),
+(11, 'Juliana Santos', 'Rua dos Lírios', 333, 'Centro', 'Fortaleza', 'CE', '1982-04-17', 'juliana_s@example.com', 'Educação Física', 40),
+(12, 'Felipe Oliveira', 'Avenida das Margaridas', 666, 'Vila Nova', 'Natal', 'RN', '1989-11-28', 'felipe_o@example.com', 'Informática', 33),
+(13, 'Isabela Almeida', 'Rua das Orquídeas', 999, 'Campestre', 'Belém', 'PA', '1984-08-10', 'isabela_a@example.com', 'Sociologia', 38),
+(14, 'Lucas Ferreira', 'Avenida dos Cravos', 111, 'Bela Vista', 'Cuiabá', 'MT', '1977-03-20', 'lucas_f@example.com', 'Filosofia', 45),
+(15, 'Carla Rocha', 'Rua dos Ipês', 777, 'Centro', 'João Pessoa', 'PB', '1983-07-08', 'carla_r@example.com', 'Inglês', 39),
+(16, 'Fernando Oliveira', 'Avenida das Rosas', 444, 'Praia', 'Curitiba', 'PR', '1976-01-25', 'fernando@example.com', 'Espanhol', 46),
+(17, 'Amanda Silva', 'Rua dos Cravos', 555, 'Vila Nova', 'Teresina', 'PI', '1982-05-30', 'amanda_s@example.com', 'Literatura', 40),
+(18, 'Rafael Almeida', 'Avenida dos Lírios', 888, 'Centro', 'Florianópolis', 'SC', '1980-09-12', 'rafael@example.com', 'Geografia', 41),
+(19, 'Camila Costa', 'Rua das Tulipas', 222, 'Jardim', 'São Luís', 'MA', '1985-04-18', 'camila_c@example.com', 'Matemática', 37),
+(20, 'Diego Santos', 'Avenida das Rosas', 555, 'Bela Vista', 'Florianópolis', 'SC', '1978-08-23', 'diego_s@example.com', 'Biologia', 43);
+
+INSERT INTO Professor (ID_Professor, Nome, Rua, Numero, Bairro, Cidade, Estado, Data_Nascimento, Email, Especialidade, Idade)
+VALUES
+(1, 'Carlos Oliveira', 'Rua das Árvores', 789, 'Centro', 'Porto Alegre', 'RS', '1985-08-20', 'carlos@universidade.com', 'Matemática', 39),
+(2, 'Ana Souza', 'Avenida dos Estudantes', 321, 'Bela Vista', 'Curitiba', 'PR', '1978-04-15', 'ana@universidade.com', 'História', 46);
+
+INSERT INTO Disciplina (ID_Disciplina, Nome, Carga_Horaria)
+VALUES
+(1, 'Matemática', 80),
+(2, 'História', 60),
+(3, 'Biologia', 70),
+(4, 'Física', 75),
+(5, 'Química', 70),
+(6, 'Geografia', 65),
+(7, 'Literatura', 60),
+(8, 'Filosofia', 55),
+(9, 'Inglês', 60),
+(10, 'Espanhol', 60),
+(11, 'Artes', 50),
+(12, 'Educação Física', 60),
+(13, 'Sociologia', 55),
+(14, 'Informática', 50),
+(15, 'Matemática Financeira', 40),
+(16, 'Programação', 60),
+(17, 'Administração', 50),
+(18, 'Economia', 60),
+(19, 'Marketing', 45),
+(20, 'Gestão de Projetos', 55);
+
+INSERT INTO Turma (ID_Turma, Ano, Semestre, Horario, ID_Professor, ID_Disciplina)
+VALUES
+(1, 2024, 1, 'Segunda e Quarta 08:00-10:00', 1, 1),
+(2, 2024, 1, 'Terça e Quinta 14:00-16:00', 2, 2),
+(3, 2024, 1, 'Segunda e Quarta 10:00-12:00', 3, 3),
+(4, 2024, 1, 'Terça e Quinta 08:00-10:00', 4, 4),
+(5, 2024, 1, 'Segunda e Quarta 14:00-16:00', 5, 5),
+(6, 2024, 1, 'Segunda e Quarta 16:00-18:00', 6, 6),
+(7, 2024, 1, 'Terça e Quinta 10:00-12:00', 7, 7),
+(8, 2024, 1, 'Segunda e Quarta 18:00-20:00', 8, 8),
+(9, 2024, 1, 'Terça e Quinta 16:00-18:00', 9, 9),
+(10, 2024, 1, 'Segunda e Quarta 20:00-22:00', 10, 10),
+(11, 2024, 1, 'Terça e Quinta 18:00-20:00', 11, 11),
+(12, 2024, 1, 'Segunda e Quarta 06:00-08:00', 12, 12),
+(13, 2024, 1, 'Terça e Quinta 20:00-22:00', 13, 13),
+(14, 2024, 1, 'Segunda e Quarta 12:00-14:00', 14, 14),
+(15, 2024, 1, 'Terça e Quinta 12:00-14:00', 15, 15),
+(16, 2024, 1, 'Segunda e Quarta 22:00-00:00', 16, 16),
+(17, 2024, 1, 'Terça e Quinta 22:00-00:00', 17, 17),
+(18, 2024, 1, 'Sábado 08:00-10:00', 18, 18),
+(19, 2024, 1, 'Sábado 10:00-12:00', 19, 19),
+(20, 2024, 1, 'Sábado 14:00-16:00', 20, 20);
+
+INSERT INTO Avaliacao (ID_Avaliacao, Nota, Data_Avaliacao, ID_Aluno, ID_Turma)
+VALUES
+(1, 8.5, '2024-04-15', 1, 1),
+(2, 7.0, '2024-04-20', 2, 2),
+(3, 9.0, '2024-04-22', 3, 3),
+(4, 6.5, '2024-04-17', 4, 4),
+(5, 8.0, '2024-04-25', 5, 5),
+(6, 7.2, '2024-04-28', 6, 6),
+(7, 9.5, '2024-04-30', 7, 7),
+(8, 6.8, '2024-05-02', 8, 8),
+(9, 8.9, '2024-05-05', 9, 9),
+(10, 7.6, '2024-05-07', 10, 10),
+(11, 9.2, '2024-05-10', 11, 11),
+(12, 6.9, '2024-05-12', 12, 12),
+(13, 8.3, '2024-05-15', 13, 13),
+(14, 7.8, '2024-05-17', 14, 14),
+(15, 9.7, '2024-05-20', 15, 15),
+(16, 8.1, '2024-05-22', 16, 16),
+(17, 6.7, '2024-05-25', 17, 17),
+(18, 9.4, '2024-05-27', 18, 18),
+(19, 7.4, '2024-05-30', 19, 19),
+(20, 9.1, '2024-06-01', 20, 20);
+
+INSERT INTO Aluno (ID_Aluno, Nome, Rua, Numero, Bairro, Cidade, Estado, Data_Nascimento, Email, Idade)
+VALUES (21, 'Pedro Almeida', 'Rua Nova', 101, 'Centro', 'São Paulo', 'SP', '2003-03-15', 'pedro.almeida@example.com', 21);
+
+SELECT * FROM Aluno;
+
+UPDATE Aluno
+SET Rua = 'Rua Alterada', Numero = 202, Email = 'pedro.alterado@example.com'
+WHERE ID_Aluno = 21;
+
+DELETE FROM Aluno
+WHERE ID_Aluno = 21;
+
+INSERT INTO Aluno (ID_Aluno, Nome, Rua, Numero, Bairro, Cidade, Estado, Data_Nascimento, Email, Idade)
+VALUES (21, 'Pedro Almeida', 'Rua Nova', 101, 'Centro', 'São Paulo','SP', '2003-03-15', 'pedro.almeida@example.com', 21);
+
+INSERT INTO Aluno (ID_Aluno, Nome, Rua, Numero, Bairro, Cidade, Estado, Data_Nascimento, Email, Idade)
+
+SELECT ID_Aluno, Nome, Rua, Numero, Bairro, Cidade, Estado, Data_Nascimento, Email, Idade
+FROM Aluno
+ORDER BY Nome;
+
+SELECT ID_Professor, Nome, Rua, Numero, Bairro, Cidade, Estado, Data_Nascimento, Email, Especialidade, Idade
+FROM Professor
+ORDER BY Nome;
+
+SELECT ID_Disciplina, Nome, Carga_Horaria
+FROM Disciplina
+WHERE Carga_Horaria > 60
+ORDER BY Carga_Horaria DESC;
+
+SELECT ID_Avaliacao, Nota, Data_Avaliacao, ID_Aluno, ID_Turma
+FROM Avaliacao
+WHERE Data_Avaliacao BETWEEN '2024-05-01' AND '2024-05-31'
+ORDER BY Data_Avaliacao;
+
+SELECT ID_Professor, Nome, Idade
+FROM Professor
+WHERE Idade > 40
+ORDER BY Idade DESC;
+
+SELECT ID_Aluno, Nome, Rua, Numero, Bairro, Cidade, Estado, Data_Nascimento, Email, Idade
+FROM Aluno
+WHERE Nome LIKE '%Pedro%'
+ORDER BY Nome;
+
+SELECT ID_Professor, Nome, Especialidade
+FROM Professor
+WHERE Especialidade = 'Matemática'
+ORDER BY Nome;
+
+SELECT ID_Aluno, Nome, Idade
+FROM Aluno
+WHERE Idade = 21
+ORDER BY Nome;
+
+SELECT ID_Turma, Ano, Semestre, Horario, ID_Professor, ID_Disciplina
+FROM Turma
+WHERE Ano = 2024
+ORDER BY Semestre, Horario;
+
+SELECT ID_Avaliacao, Nota, Data_Avaliacao, ID_Aluno, ID_Turma
+FROM Avaliacao
+WHERE ID_Turma = 1
+ORDER BY Data_Avaliacao;
