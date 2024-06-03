@@ -1,6 +1,6 @@
 # Sistema de Banco de Dados para uma Escola
 
-1 - Cenário:
+# 1 - Cenário:
 
 Descrição do Cenário:
 
@@ -74,6 +74,13 @@ Disciplina - Turma: Uma disciplina pode ter muitas turmas (1:N).
 Turma - Matrícula: Uma turma pode ter muitos alunos matriculados (1:N).
 Turma - Avaliação: Uma turma pode ter muitas avaliações (1:N).
 Aluno - Avaliação: Um aluno pode receber muitas avaliações (1:N).
+
+# 2 - Modelagem Conceitual: 
+
+![image](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/efad42fb-2c8c-4f20-b605-e525b94b83d8)
+Este diagrama representa o modelo conceitual de um sistema de gerenciamento de uma escola de maneira mais clara e estruturada das entidades e seus relacionamentos.
+
+
 
 
 
