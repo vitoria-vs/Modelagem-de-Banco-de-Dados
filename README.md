@@ -10,18 +10,18 @@ Entidades, Atributos e Relacionamentos
 1. Aluno
 
 Atributos:
-ID_Aluno (chave primária, simples): Número único de identificação do aluno.
-Nome (simples): Nome completo do aluno.
-Endereço (composto): Rua, Número, Bairro, Cidade, Estado.
-Data_Nascimento (simples): Data de nascimento do aluno.
-E-mail (simples): Endereço de e-mail do aluno.
-Telefones (multivalorado): Lista de números de telefone do aluno.
-Idade (derivado): Calculado a partir da Data_Nascimento.
-Relacionamentos:
-Um aluno pode estar matriculado em muitas turmas (1:N com Matrícula).
-Um aluno pode receber muitas avaliações (1:N com Avaliação).
+ID_Aluno (chave primária, simples): Número único de identificação do aluno. <br>
+Nome (simples): Nome completo do aluno.<br>
+Endereço (composto): Rua, Número, Bairro, Cidade, Estado.<br>
+Data_Nascimento (simples): Data de nascimento do aluno.<br>
+E-mail (simples): Endereço de e-mail do aluno.<br>
+Telefones (multivalorado): Lista de números de telefone do aluno.<br>
+Idade (derivado): Calculado a partir da Data_Nascimento.<br>
+Relacionamentos:<br>
+Um aluno pode estar matriculado em muitas turmas (1:N com Matrícula).<br>
+Um aluno pode receber muitas avaliações (1:N com Avaliação).<br>
 
-2. Professor
+2. Professor<br><br>
 
 Atributos:
 ID_Professor (chave primária, simples): Número único de identificação do professor.
