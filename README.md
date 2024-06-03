@@ -77,15 +77,17 @@ Aluno - Avaliação: Um aluno pode receber muitas avaliações (1:N).<br>
 
 # 2 - Modelagem Conceitual: <br>
 
-![image](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/efad42fb-2c8c-4f20-b605-e525b94b83d8)
+![image](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/efad42fb-2c8c-4f20-b605-e525b94b83d8)<br>
 Este diagrama representa o modelo conceitual de um sistema de gerenciamento de uma escola de maneira mais clara e estruturada das entidades e seus relacionamentos.<br>
 
 # 3 - Modelagem Lógica:<br>
 
-![image](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/0033e7e4-6698-4452-9ab8-d2431e78205c)
+![image](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/0033e7e4-6698-4452-9ab8-d2431e78205c)<br>
 Este modelo lógico detalha a estrutura do banco de dados, especificando as chaves primárias e estrangeiras para garantir a integridade referencial e o correto relacionamento entre as entidades do sistema.<br>
 
 # 4 - Modelagem Física:<br>
+
+
 
 
 
