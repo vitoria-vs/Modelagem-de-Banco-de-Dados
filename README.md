@@ -85,7 +85,11 @@ Este diagrama representa o modelo conceitual de um sistema de gerenciamento de u
 ![image](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/0033e7e4-6698-4452-9ab8-d2431e78205c)<br>
 Este modelo lógico detalha a estrutura do banco de dados, especificando as chaves primárias e estrangeiras para garantir a integridade referencial e o correto relacionamento entre as entidades do sistema.<br>
 
-# 4 - Modelagem Física:<br>
+# 4 - Modelagem Física:
+
+Este projeto implementa a modelagem física de um banco de dados para uma escola utilizando SQL Server. Abaixo mostra como as tabelas foram criadas e as relações entre elas.
+
+
 
 
 
