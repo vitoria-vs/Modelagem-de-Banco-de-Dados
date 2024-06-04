@@ -87,8 +87,8 @@ Este modelo lógico detalha a estrutura do banco de dados, especificando as chav
 
 # 4 - Modelagem Física:<br>
 
-Este projeto implementa a modelagem física de um banco de dados para uma escola utilizando SQL Server. Abaixo mostra como as tabelas foram criadas e as relações entre elas.<br>
-Tabela aluno: <br>
+Este projeto implementa a modelagem física de um banco de dados para uma escola utilizando SQL Server. Abaixo mostra como as tabelas foram criadas e as relações entre elas.<br><br>
+Tabela aluno: 
 ```sql
 CREATE TABLE Aluno (
     ID_Aluno INT PRIMARY KEY,
