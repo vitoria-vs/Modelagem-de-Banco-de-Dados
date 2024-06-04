@@ -85,9 +85,57 @@ Este diagrama representa o modelo conceitual de um sistema de gerenciamento de u
 ![image](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/0033e7e4-6698-4452-9ab8-d2431e78205c)<br>
 Este modelo lógico detalha a estrutura do banco de dados, especificando as chaves primárias e estrangeiras para garantir a integridade referencial e o correto relacionamento entre as entidades do sistema.<br>
 
-# 4 - Modelagem Física:
+# 4 - Modelagem Física:<br>
 
-Este projeto implementa a modelagem física de um banco de dados para uma escola utilizando SQL Server. Abaixo mostra como as tabelas foram criadas e as relações entre elas.
+Este projeto implementa a modelagem física de um banco de dados para uma escola utilizando SQL Server. Abaixo mostra como as tabelas foram criadas e as relações entre elas.<br>
+Tabela aluno: 
+```sql
+CREATE TABLE Aluno (
+    ID_Aluno INT PRIMARY KEY,
+    Nome VARCHAR(100),
+    Rua VARCHAR(100),
+    Numero INT,
+    Bairro VARCHAR(50),
+    Cidade VARCHAR(50),
+    Estado VARCHAR(50),
+    Data_Nascimento DATE,
+    Email VARCHAR(100),
+    Idade INT
+);
+```
+Tabela Telefones Aluno:
+```sql
+CREATE TABLE Telefones_Aluno (
+    ID_Aluno INT,
+    Telefone VARCHAR(15),
+    FOREIGN KEY (ID_Aluno) REFERENCES Aluno(ID_Aluno)
+);
+```
+Tabela Professor:
+```sql
+CREATE TABLE Professor (
+    ID_Professor INT PRIMARY KEY,
+    Nome VARCHAR(100),
+    Rua VARCHAR(100),
+    Numero INT,
+    Bairro VARCHAR(50),
+    Cidade VARCHAR(50),
+    Estado VARCHAR(50),
+    Data_Nascimento DATE,
+    Email VARCHAR(100),
+    Especialidade VARCHAR(100),
+    Idade INT
+);
+```
+Tabela Telefones Professor:
+```sql
+CREATE TABLE Telefones_Professor (
+    ID_Professor INT,
+    Telefone VARCHAR(15),
+    FOREIGN KEY (ID_Professor) REFERENCES Professor(ID_Professor)
+);
+```
+
 
 
 
