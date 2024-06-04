@@ -88,7 +88,7 @@ Este modelo lógico detalha a estrutura do banco de dados, especificando as chav
 # 4 - Modelagem Física:<br>
 
 Este projeto implementa a modelagem física de um banco de dados para uma escola utilizando SQL Server. Abaixo mostra como as tabelas foram criadas e as relações entre elas.<br>
-Tabela aluno: 
+Tabela aluno: <br>
 ```sql
 CREATE TABLE Aluno (
     ID_Aluno INT PRIMARY KEY,
@@ -135,6 +135,51 @@ CREATE TABLE Telefones_Professor (
     FOREIGN KEY (ID_Professor) REFERENCES Professor(ID_Professor)
 );
 ```
+Tabela Disciplina:
+```sql
+CREATE TABLE Disciplina (
+    ID_Disciplina INT PRIMARY KEY,
+    Nome VARCHAR(100),
+    Carga_Horaria INT
+);
+```
+Tabela Turma:
+```sql
+CREATE TABLE Turma (
+    ID_Turma INT PRIMARY KEY,
+    Ano INT,
+    Semestre INT,
+    Horario VARCHAR(50),
+    ID_Professor INT,
+    ID_Disciplina INT,
+    FOREIGN KEY (ID_Professor) REFERENCES Professor(ID_Professor),
+    FOREIGN KEY (ID_Disciplina) REFERENCES Disciplina(ID_Disciplina)
+);
+```
+Tabela Aluno Turma:
+```sql
+CREATE TABLE Aluno_Turma (
+    ID_Aluno INT,
+    ID_Turma INT,
+    PRIMARY KEY (ID_Aluno, ID_Turma),
+    FOREIGN KEY (ID_Aluno) REFERENCES Aluno(ID_Aluno),
+    FOREIGN KEY (ID_Turma) REFERENCES Turma(ID_Turma)
+);
+```
+Tabela Avaliação:
+```sql
+CREATE TABLE Avaliacao (
+    ID_Avaliacao INT PRIMARY KEY,
+    Nota FLOAT,
+    Data_Avaliacao DATE,
+    ID_Aluno INT,
+    ID_Turma INT,
+    FOREIGN KEY (ID_Aluno) REFERENCES Aluno(ID_Aluno),
+    FOREIGN KEY (ID_Turma) REFERENCES Turma(ID_Turma)
+);
+```
+
+
 
 
 
