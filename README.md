@@ -230,6 +230,14 @@ WHERE ID_Aluno = 21;
 ```
 ![delete](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/7cdbcde5-7b69-4350-bbd9-fb6e20f36ded)
 
+# 7 - Relatórios:<br>
+
+As consultas a seguir demonstram a relação entre as tabelas do seu banco de dados e como realizar seleção, filtro e ordenação dos dados.<br>
+
+Consulta 1:
+![Consulta 1](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/c92a25f1-c1a9-4714-b20c-ad903e272286)
+
+
 
 
 
