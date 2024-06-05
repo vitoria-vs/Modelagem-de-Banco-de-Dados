@@ -1,6 +1,6 @@
 # Sistema de Banco de Dados para uma Escola
 
-# 1 - Cenário:
+# 1 - Cenário: <br>
 
 Descrição do Cenário:
 
@@ -203,6 +203,22 @@ INSERT INTO Aluno (ID_Aluno, Nome, Rua, Numero, Bairro, Cidade, Estado, Data_Nas
 (19, 'Anderson Santos', 'Avenida dos Cravos', 888, 'Bela Vista', 'Florianópolis', 'SC', '1990-09-12', 'anderson@example.com', 31),
 (20, 'Fernanda Costa', 'Rua das Rosas', 222, 'Praia', 'São Luís', 'MA', '1995-04-18', 'fernanda@example.com', 27);
 ```
+# 6 - CRUD: <br>
+CRUD é um acrônimo para as operações básicas de gestão de dados em qualquer sistema de banco de dados: Create (Criar), Read (Ler), Update (Atualizar) e Delete (Deletar). Estas quatro ações fundamentais representam as interações primárias que os usuários e sistemas têm com qualquer conjunto de dados. Na prática, CRUD é aplicado para garantir que os aplicativos possam executar operações essenciais de armazenamento, recuperação, modificação e remoção de dados de maneira eficaz. Por exemplo:
+
+1-Create: adcionar Dados nas tabelas.<br>
+![create](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/1a39e205-80ff-4f07-a211-eafbc556e098)<br>
+
+2-Read Ler os dados inseridos nas tabelas.
+```sql
+SELECT * FROM Aluno;
+```
+![read](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/48a49b9b-864c-4bbe-8118-bc5d0aa43041)
+
+
+
+
+
 
 
 
