@@ -206,14 +206,33 @@ INSERT INTO Aluno (ID_Aluno, Nome, Rua, Numero, Bairro, Cidade, Estado, Data_Nas
 # 6 - CRUD: <br>
 CRUD é um acrônimo para as operações básicas de gestão de dados em qualquer sistema de banco de dados: Create (Criar), Read (Ler), Update (Atualizar) e Delete (Deletar). Estas quatro ações fundamentais representam as interações primárias que os usuários e sistemas têm com qualquer conjunto de dados. Na prática, CRUD é aplicado para garantir que os aplicativos possam executar operações essenciais de armazenamento, recuperação, modificação e remoção de dados de maneira eficaz. Por exemplo:
 
-1-Create: adcionar Dados nas tabelas.<br>
+1-Create: adicionar dados nas tabelas.<br>
 ![create](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/1a39e205-80ff-4f07-a211-eafbc556e098)<br>
 
-2-Read Ler os dados inseridos nas tabelas.
+2-Read: ler os dados inseridos nas tabelas. <br>
 ```sql
 SELECT * FROM Aluno;
 ```
 ![read](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/48a49b9b-864c-4bbe-8118-bc5d0aa43041)
+
+3-Update: modificar dados das tabelas. <br>
+```sql
+UPDATE Aluno
+SET Rua = 'Rua Alterada', Numero = 202, Email = 'pedro.alterado@example.com'
+WHERE ID_Aluno = 21;
+```
+![update](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/c5134fe4-4643-47e1-a7c6-748baa17ca87)
+
+4-Delete: deletar dados inseridos nas tabelas.<br>
+```sql
+DELETE FROM Aluno
+WHERE ID_Aluno = 21;
+```
+![delete](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/7cdbcde5-7b69-4350-bbd9-fb6e20f36ded)
+
+
+
+
 
 
 
