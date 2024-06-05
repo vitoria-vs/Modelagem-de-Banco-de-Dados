@@ -178,7 +178,31 @@ CREATE TABLE Avaliacao (
     FOREIGN KEY (ID_Turma) REFERENCES Turma(ID_Turma)
 );
 ```
-
+# 5 - Inserção de Dados:<br>
+A seguir é demonstrada a inserção de dados na Tabela Aluno.<br>
+```sql
+INSERT INTO Aluno (ID_Aluno, Nome, Rua, Numero, Bairro, Cidade, Estado, Data_Nascimento, Email, Idade) VALUES
+(1,'João Silva', 'Rua das Flores', 123, 'Centro', 'São Paulo', 'SP',  '1990-05-10', 'joao@gmail.com',22),
+(2,'Maria Santos', 'Avenida Principal', 456, 'Jardim', 'Rio de Janeiro', 'RJ','1993-05-10' ,'maria@hotmail.com',22),
+(3, 'Pedro Oliveira', 'Rua dos Coqueiros', 789, 'Praia', 'Florianópolis', 'SC', '1995-08-15', 'pedro@example.com', 29),
+(4, 'Ana Silva', 'Rua das Palmeiras', 102, 'Centro', 'Salvador', 'BA', '1993-03-25', 'ana@example.com', 31),
+(5, 'Lucas Fernandes', 'Avenida das Flores', 567, 'Jardins', 'Brasília', 'DF', '1992-11-12', 'lucas@example.com', 32),
+(6, 'Juliana Costa', 'Rua da Esperança', 321, 'Vila Nova', 'Recife', 'PE', '1994-07-18', 'juliana@example.com', 30),
+(7, 'Felipe Santos', 'Rua dos Girassóis', 888, 'Campestre', 'Porto Alegre', 'RS', '1991-09-30', 'felipe@example.com', 33),
+(8, 'Aline Lima', 'Avenida das Acácias', 444, 'Floresta', 'Manaus', 'AM', '1996-02-08', 'aline@example.com', 28),
+(9, 'Rafaela Oliveira', 'Rua dos Pinheiros', 555, 'Jardim', 'Campinas', 'SP', '1993-12-20', 'rafaela@example.com', 31),
+(10, 'Gabriel Pereira', 'Rua das Oliveiras', 777, 'Centro', 'Goiânia', 'GO', '1990-06-05', 'gabriel@example.com', 32),
+(11, 'Mariana Costa', 'Avenida dos Lírios', 333, 'Alameda', 'Fortaleza', 'CE', '1992-04-17', 'mariana@example.com', 30),
+(12, 'Thiago Souza', 'Rua das Amendoeiras', 222, 'Praia', 'Natal', 'RN', '1995-11-28', 'thiago@example.com', 27),
+(13, 'Carla Santos', 'Rua das Violetas', 696, 'Bela Vista', 'São Luís', 'MA', '1994-08-10', 'carla@example.com', 29),
+(14, 'Daniel Almeida', 'Avenida das Margaridas', 111, 'Centro', 'Belém', 'PA', '1991-10-15', 'daniel@example.com', 32),
+(15, 'Isabela Ferreira', 'Rua dos Ipês', 999, 'Jardim', 'Cuiabá', 'MT', '1990-03-20', 'isabela@example.com', 34),
+(16, 'Diego Rocha', 'Avenida das Orquídeas', 777, 'Alameda', 'João Pessoa', 'PB', '1993-07-08', 'diego@example.com', 31),
+(17, 'Camila Oliveira', 'Rua dos Lírios', 444, 'Vila Nova', 'Curitiba', 'PR', '1996-01-25', 'camila@example.com', 28),
+(18, 'Luciana Silva', 'Rua das Tulipas', 555, 'Centro', 'Teresina', 'PI', '1992-05-30', 'luciana@example.com', 29),
+(19, 'Anderson Santos', 'Avenida dos Cravos', 888, 'Bela Vista', 'Florianópolis', 'SC', '1990-09-12', 'anderson@example.com', 31),
+(20, 'Fernanda Costa', 'Rua das Rosas', 222, 'Praia', 'São Luís', 'MA', '1995-04-18', 'fernanda@example.com', 27);
+```
 
 
 
