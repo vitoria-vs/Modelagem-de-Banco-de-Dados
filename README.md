@@ -274,7 +274,6 @@ Descrição: Esta consulta retorna uma lista de disciplinas que têm mais de 60 
 ## Consulta 4: Avaliações Realizadas em um Período Específico (filtro e ordenação)<br>
 
 ```sql
-Copiar código
 SELECT ID_Avaliacao, Nota, Data_Avaliacao, ID_Aluno, ID_Turma
 FROM Avaliacao
 WHERE Data_Avaliacao BETWEEN '2024-05-01' AND '2024-05-31'
