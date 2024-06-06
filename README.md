@@ -234,7 +234,7 @@ WHERE ID_Aluno = 21;
 
 As consultas a seguir demonstram a relação entre as tabelas do seu banco de dados e como realizar seleção, filtro e ordenação dos dados.<br>
 
-Consulta 1: Lista de Alunos (seleção e ordenação)<br>
+## Consulta 1: Lista de Alunos (seleção e ordenação)<br>
 
 ```sql
 SELECT ID_Aluno, Nome, Rua, Numero, Bairro, Cidade, Estado, Data_Nascimento, Email, Idade
@@ -246,7 +246,7 @@ ORDER BY Nome;
 
 Descrição: Esta consulta retorna uma lista de todos os alunos, ordenada pelo nome.<br>
 
-Consulta 2: Lista de Professores (seleção e ordenação)<br>
+## Consulta 2: Lista de Professores (seleção e ordenação)<br>
 
 ```sql
 SELECT ID_Professor, Nome, Rua, Numero, Bairro, Cidade, Estado, Data_Nascimento, Email, Especialidade, Idade
@@ -258,7 +258,7 @@ ORDER BY Nome;
 
 Descrição: Esta consulta retorna uma lista de todos os professores, ordenada pelo nome.<br>
 
-Consulta 3: Disciplinas com Mais de X Horas (filtro e ordenação)<br>
+## Consulta 3: Disciplinas com Mais de X Horas (filtro e ordenação)<br>
 
 ```sql
 SELECT ID_Disciplina, Nome, Carga_Horaria
@@ -270,6 +270,98 @@ ORDER BY Carga_Horaria DESC;
 ![Consulta 3](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/ff8abf11-6692-4178-8790-b3f6414a0dd3)<br>
 
 Descrição: Esta consulta retorna uma lista de disciplinas que têm mais de 60 horas de carga horária, ordenada pela carga horária em ordem decrescente.<br>
+
+## Consulta 4: Avaliações Realizadas em um Período Específico (filtro e ordenação)<br>
+
+```sql
+Copiar código
+SELECT ID_Avaliacao, Nota, Data_Avaliacao, ID_Aluno, ID_Turma
+FROM Avaliacao
+WHERE Data_Avaliacao BETWEEN '2024-05-01' AND '2024-05-31'
+ORDER BY Data_Avaliacao;
+```
+![image](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/5f134518-6402-4fc1-a043-4ed412d28a54)<br>
+
+Descrição: Esta consulta retorna uma lista de avaliações realizadas entre 1º de maio de 2024 e 31 de maio de 2024, ordenada pela data da avaliação.<br>
+
+## Consulta 5: Professores Com Mais de X Anos de Idade (filtro e ordenação)<br>
+
+```sql
+SELECT ID_Professor, Nome, Idade
+FROM Professor
+WHERE Idade > 40
+ORDER BY Idade DESC;
+```
+![image](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/8a6687f7-9d69-48a6-b266-0f007d4a5421)<br>
+
+Descrição: Esta consulta retorna uma lista de professores que têm mais de 40 anos, ordenada pela idade em ordem decrescente.<br>
+
+## Consulta 6: Alunos com Nome Específico (filtro e ordenação)<br>
+
+```sql
+SELECT ID_Aluno, Nome, Rua, Numero, Bairro, Cidade, Estado, Data_Nascimento, Email, Idade
+FROM Aluno
+WHERE Nome LIKE '%Pedro%'
+ORDER BY Nome;
+```
+![image](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/b7027c2d-637f-4628-8c6f-657acc7316a8)<br>
+
+Descrição: Esta consulta retorna uma lista de alunos cujo nome contém "Pedro", ordenada pelo nome.<br>
+
+## Consulta 7: Professores com Especialidade Específica (filtro e ordenação)<br>
+
+```sql
+SELECT ID_Professor, Nome, Especialidade
+FROM Professor
+WHERE Especialidade = 'Matemática'
+ORDER BY Nome;
+```
+
+![image](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/ca448b08-3f96-4f87-8c64-587730c31510)<br>
+
+Descrição: Esta consulta retorna uma lista de professores que têm a especialidade em "Matemática", ordenada pelo nome.<br>
+
+## Consulta 8: Alunos com Idade Específica (filtro e ordenação)<br>
+
+```sql
+SELECT ID_Aluno, Nome, Idade
+FROM Aluno
+WHERE Idade = 21
+ORDER BY Nome;
+```
+
+![image](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/bd06629c-4349-4cf5-bc91-4d1f2e964f40)<br>
+
+Descrição: Esta consulta retorna uma lista de alunos que têm 21 anos, ordenada pelo nome.<br>
+
+## Consulta 9: Turmas em um Ano Específico (filtro e ordenação)<br>
+
+```sql
+SELECT ID_Turma, Ano, Semestre, Horario, ID_Professor, ID_Disciplina
+FROM Turma
+WHERE Ano = 2024
+ORDER BY Semestre, Horario;
+```
+
+![image](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/656857f8-7648-4e04-81a9-b84892221a75)<br>
+
+Descrição: Esta consulta retorna uma lista de turmas que ocorrem no ano de 2024, ordenada pelo semestre e horário.<br>
+
+## Consulta 10: Avaliações de uma Turma Específica (filtro e ordenação)<br>
+
+```sql
+SELECT ID_Avaliacao, Nota, Data_Avaliacao, ID_Aluno, ID_Turma
+FROM Avaliacao
+WHERE ID_Turma = 1
+ORDER BY Data_Avaliacao;
+```
+
+![image](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/58bfac00-7289-470a-ac27-c3a2752bb5ed)<br>
+
+Descrição: Esta consulta retorna uma lista de avaliações realizadas na turma com ID 1, ordenada pela data da avaliação.<br>
+
+
+
 
 
 
