@@ -234,12 +234,42 @@ WHERE ID_Aluno = 21;
 
 As consultas a seguir demonstram a relação entre as tabelas do seu banco de dados e como realizar seleção, filtro e ordenação dos dados.<br>
 
-Consulta 1:
-![Consulta 1](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/c92a25f1-c1a9-4714-b20c-ad903e272286)
+Consulta 1: Lista de Alunos (seleção e ordenação)<br>
 
+```sql
+SELECT ID_Aluno, Nome, Rua, Numero, Bairro, Cidade, Estado, Data_Nascimento, Email, Idade
+FROM Aluno
+ORDER BY Nome;
+```
 
+![Consulta 1](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/c92a25f1-c1a9-4714-b20c-ad903e272286) <br>
 
+Descrição: Esta consulta retorna uma lista de todos os alunos, ordenada pelo nome.<br>
 
+Consulta 2: Lista de Professores (seleção e ordenação)<br>
+
+```sql
+SELECT ID_Professor, Nome, Rua, Numero, Bairro, Cidade, Estado, Data_Nascimento, Email, Especialidade, Idade
+FROM Professor
+ORDER BY Nome;
+```
+
+![Consulta 2](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/11c3bc71-2491-4b56-92c2-adc2995f7982)<br>
+
+Descrição: Esta consulta retorna uma lista de todos os professores, ordenada pelo nome.<br>
+
+Consulta 3: Disciplinas com Mais de X Horas (filtro e ordenação)<br>
+
+```sql
+SELECT ID_Disciplina, Nome, Carga_Horaria
+FROM Disciplina
+WHERE Carga_Horaria > 60
+ORDER BY Carga_Horaria DESC;
+```
+
+![Consulta 3](https://github.com/vitoria-vs/Modelagem-de-Banco-de-Dados/assets/149893034/ff8abf11-6692-4178-8790-b3f6414a0dd3)<br>
+
+Descrição: Esta consulta retorna uma lista de disciplinas que têm mais de 60 horas de carga horária, ordenada pela carga horária em ordem decrescente.<br>
 
 
 
